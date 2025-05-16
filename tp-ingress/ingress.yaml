@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rancher-ingress
+  namespace: standard
+  annotations:
+  cert-manager.io/cluster-issuer: letsencrypt-prod
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: traefik
+  tls:
+    - secretName: rancher-secret
+      hosts:
+        - app1.course-jokar.ip-ddns.com
+
+  rules:
+    - host: app1.course-jokar.ip-ddns.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: rancher
+                port:
+                  number: 5000

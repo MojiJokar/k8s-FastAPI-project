@@ -1,0 +1,12 @@
+# Auto-detect text files and normalize to LF in the repository
+* text=auto
+
+# Always use LF for shell scripts (good for Linux/macOS)
+*.sh text eol=lf
+
+# Always use CRLF for Windows batch files
+*.bat text eol=crlf
+
+# Treat images as binary (no conversion)
+*.png binary
+*.jpg binary
