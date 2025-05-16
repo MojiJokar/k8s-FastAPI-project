@@ -1,0 +1,115 @@
+# fastapi-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi
+  namespace: standard
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fastapi
+  template:
+    metadata:
+      labels:
+        app: fastapi
+    spec:
+      containers:
+        - name: fastapi
+          image: max***DFHfgdfghRTY***20/kubernetes-*DSG***Dfsgsdfgdg***_fastapi:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-config
+                  key: POSTGRES_USER
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_PASSWORD
+            - name: POSTGRES_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-config
+                  key: POSTGRES_DB
+            - name: POSTGRES_HOST
+              value: db  # Must match the service name in the StatefulSet[1][3]
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: DATABASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-config
+                  key: DATABASE_URL
+
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: fastapi
+#   namespace: standard
+# spec:
+#   replicas: 3
+#   selector:
+#     matchLabels:
+#       app: fastapi
+#   template:
+#     metadata:
+#       labels:
+#         app: fastapi
+#     spec:
+#       containers:
+#         - name: fastapi
+#           image: maxj***dfgfdgdfgsdfg/kubernetes_dsafsdfasdfasdfsd****_fastapi:latest
+#           ports:
+#             - containerPort: 5000
+#           env:
+#               - name: POSTGRES_USER
+#                 valueFrom:
+#                   secretKeyRef:
+#                     name: postgres-secret
+#                     key: POSTGRES_USER
+#               - name: POSTGRES_PASSWORD
+#                 valueFrom:
+#                   secretKeyRef:
+#                     name: postgres-secret
+#                     key: POSTGRES_PASSWORD
+#               - name: POSTGRES_DB
+#                 valueFrom:
+#                   configMapKeyRef:
+#                     name: postgres-config
+#                     key: POSTGRES_DB
+
+#               - name: DATABASE_URL
+#                 valueFrom:
+#                   configMapKeyRef:
+#                     name: postgres-config
+#                     key: DATABASE_URL
+#               - name: POSTGRES_HOST
+#                 valueFrom:
+#                   configMapKeyRef:
+#                     name: postgres-config
+#                     key: POSTGRES_HOST
+#               - name: POSTGRES_PORT
+#                 valueFrom:
+#                   configMapKeyRef:
+#                     name: postgres-config
+#                     key: POSTGRES_PORT
+
+
+# Service can be use here Too !
+---
+# fastapi-service.yaml
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: fastapi
+# spec:
+#   type: NodePort
+#   ports:
+#     - port: 5000
+#       targetPort: 5000
+#   selector:
+#     app: fastapi

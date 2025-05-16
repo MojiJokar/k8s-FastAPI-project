@@ -1,0 +1,29 @@
+# fastapi-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi
+  namespace: standard
+spec:
+  type: NodePort
+  ports:
+    - port: 5000
+      targetPort: 5000
+  selector:
+    app: fastapi
+
+
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: fastapi-lb
+#   namespace: standard
+# spec:
+#   type: LoadBalancer
+#   selector:
+#     app: fastapi
+#   ports:
+#     - protocol: TCP
+#       port: 80
+#       targetPort: 5000
