@@ -5,8 +5,8 @@ Kubernetes (or K8s) is an open source container orchestrator maintained by the C
 Context and objective:
  Example for deploying new microservices that will enable the registration and counting of users present on this platform. To do this, there are  2 microservices to deploy:
  
- a service that will deploy the  FastAPI application.
- a second service that will deploy  PostgresSQL database
+-  a service that will deploy the  FastAPI application.  - a second service that will deploy your PostgresSQL database
+
    ---------------------------------------------------------------------
 
 For the successful completion of your assignment, we have prepared a roadmap for you:
