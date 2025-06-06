@@ -1,4 +1,5 @@
-- Kubernetes (or K8s) is an open source container orchestrator maintained by the Cloud Native Computing Foundation (CNCF). Thanks to its highly advanced features and large number of contributors, Kubernetes has become a de facto standard over time, supplanting Mesos and Docker Swarm, for example. As a DevOps engineer, getting to grips with Kubernetes and implementing it is essential.
+ Kubernetes:
+ - (or K8s) is an open source container orchestrator maintained by the Cloud Native Computing Foundation (CNCF). Thanks to its highly advanced features and large number of contributors, Kubernetes has become a de facto standard over time, supplanting Mesos and Docker Swarm, for example. As a DevOps engineer, getting to grips with Kubernetes and implementing it is essential.
 ------------------------------------------------------------------------------------------------
 # Deploying a secure application
 Context and objective:
