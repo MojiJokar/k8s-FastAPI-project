@@ -5,15 +5,15 @@ Kubernetes (or K8s) is an open source container orchestrator maintained by the C
 Context and objective:
  Example for deploying new microservices that will enable the registration and counting of users present on this platform. To do this, there are  2 microservices to deploy:
  
--  a service that will deploy the  FastAPI application.  - a second service that will deploy your PostgresSQL database
+1. a service that will deploy the  FastAPI application.    2. a second service that will deploy your PostgresSQL database
 
    ---------------------------------------------------------------------
 
-For the successful completion of your assignment, we have prepared a roadmap for you:
+- RoadMap:
 
-Define the appropriate Kubernetes objects for optimal deployment of microservices, you have the choice for the type of object to use.
+1.Define the appropriate Kubernetes objects for optimal deployment of microservices, you have the choice for the type of object to use.
 
-Write the Dockerfile for the microservice FastAPI. The application is available on the following repository: kubernetes-devops-project.git.
+2. Write the Dockerfile for the microservice FastAPI. The application is available on the following repository: kubernetes-devops-project.git.
 
 Base yourself on the docker-compose.yaml file in order to understand the architecture to be deployed.
 
