@@ -11,30 +11,29 @@ Context and objective:
 
 - RoadMap:
 
-1.Define the appropriate Kubernetes objects for optimal deployment of microservices.
+1. Define the appropriate Kubernetes objects for optimal deployment of microservices.
 
-2.Write the Dockerfile for the microservice FastAPI. The application is available on the following repository: kubernetes-devops-project.git.
+2. Write the Dockerfile for the microservice FastAPI. The application is available on the following repository: kubernetes-devops-project.git.
 
-3.Base  on the docker-compose.yaml file in order to understand the architecture to be deployed.
+3. Base  on the docker-compose.yaml file in order to understand the architecture to be deployed.
 
-4.You will use Rancher's default storage class (StorageClass) to manage your storage for your application. Your storage volume will have 10 Gb of storage and should allow multiple Pods to write to it.
+4. You will use Rancher's default storage class (StorageClass) to manage your storage for your application. Your storage volume will have 10 Gb of storage and should allow multiple Pods to write to it.
 
-You will define 3 replicas of your application when it is deployed.
+5.  3 replicas of  application when it is deployed.
 
-You will also need to prepare a backup plan for your cluster using the K3s client.
+#  a backup plan for your cluster using the K3s client.
 
-All tasks will need to be set up in this way:
+-----------------------------------------------------------------
 
-Deployment using Kubernetes' standard YAML files, to deploy them you will use the Namespace standard.
+Deployment using Kubernetes' standard YAML files, to deploy with  the Namespace "standard".
 Deliverables:
 
-To validate the exercise you will need to send in Zip format:
 
-A YAML-STANTARD directory with all the configurations.
+- A YAML-STANTARD directory with all the configurations.
 
-The log files for your various microservices (FastAPI, PostgreSQL).
+- The log files for  various microservices (FastAPI, PostgreSQL).
 
-A backup file of your ETCD database once all the configurations set up have been deployed.
+- A backup file of your ETCD database once all the configurations set up have been deployed.
 
 A few tips to get you started:
 
