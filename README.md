@@ -35,25 +35,16 @@ Deliverables:
 
 - A backup file of your ETCD database once all the configurations set up have been deployed.
 
-A few tips to get you started:
+# A few tips to get you started:
 
-Each microservice will need to be exposed via a service so that other microservices can connect to a specific port.
+- ach microservice will need to be exposed via a service so that other microservices can connect to a specific port.
 
-The only Pod with which we will be able to connect via ingress is that of the FastAPI application.
+- The only Pod with which we will be able to connect via ingress is that of the FastAPI application.
 
-Be sure to choose your objects according to the type of application (Stateful, Stateless) or according to confidentiality (ConfigMap, Secret)
+- type of application (Stateful, Stateless) or according to confidentiality (ConfigMap, Secret) is important.
 
-To populate your database you can do this on the /docs route of your micro-service FastAPI.
+- To populate the database we use  /docs route of your micro-service FastAPI.
 
-For the list of users, the route is /users.
+- For the list of users, the route is /users.
 
-For the count of all users on the platform, the route is /users/count.
-
-
-
-
-
-
-
-
-
+- For the count of all users on the platform, the route is /users/count.
