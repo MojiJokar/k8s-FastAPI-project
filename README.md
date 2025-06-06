@@ -11,15 +11,13 @@ Context and objective:
 
 - RoadMap:
 
-1.Define the appropriate Kubernetes objects for optimal deployment of microservices, you have the choice for the type of object to use.
+1.Define the appropriate Kubernetes objects for optimal deployment of microservices.
 
-2. Write the Dockerfile for the microservice FastAPI. The application is available on the following repository: kubernetes-devops-project.git.
+2.Write the Dockerfile for the microservice FastAPI. The application is available on the following repository: kubernetes-devops-project.git.
 
-Base yourself on the docker-compose.yaml file in order to understand the architecture to be deployed.
+3.Base  on the docker-compose.yaml file in order to understand the architecture to be deployed.
 
-You will create your subdomain at https://cloudns.net and create a registration for your website.
-
-You will use Rancher's default storage class (StorageClass) to manage your storage for your application. Your storage volume will have 10 Gb of storage and should allow multiple Pods to write to it.
+4.You will use Rancher's default storage class (StorageClass) to manage your storage for your application. Your storage volume will have 10 Gb of storage and should allow multiple Pods to write to it.
 
 You will define 3 replicas of your application when it is deployed.
 
