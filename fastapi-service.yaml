@@ -1,29 +1,28 @@
-# fastapi-service.yaml
+# # fastapi-service.yaml
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: fastapi
+#   namespace: standard
+# spec:
+#   type: NodePort
+#   ports:
+#     - port: 5000
+#       targetPort: 5000
+#   selector:
+#     app: fastapi
+
 apiVersion: v1
 kind: Service
 metadata:
   name: fastapi
   namespace: standard
 spec:
-  type: NodePort
+  type: LoadBalancer            # Change from NodePort to LoadBalancer
   ports:
-    - port: 5000
-      targetPort: 5000
+    - port: 5000               # The port your service listens on
+      targetPort: 5000          # The target port on the pods
+      protocol: TCP             # Protocol (optional, TCP is default)
   selector:
     app: fastapi
 
-
-
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: fastapi-lb
-#   namespace: standard
-# spec:
-#   type: LoadBalancer
-#   selector:
-#     app: fastapi
-#   ports:
-#     - protocol: TCP
-#       port: 80
-#       targetPort: 5000
